@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+</style>
+</head>
+<body>
+<!--<script type="text/javascript">
+	var a=[];
+	b=a;
+	b[0]=1;
+	// document.write(a[0]+'<br/>'); //1
+	//对象的比较是引用的比较，只有两个对象引用的地址是一样的时候他们才相等。for则
+	//否则即使两个数组或者对象拥有完全相同属性和值都是不相等的。如下
+	var c=[1,2,3];
+	var d=[1,2,3];
+	e=c;
+	e[0]=3;
+	// document.write(typeof c===d);//flase
+	document.write((c===e)+'<br/>');//true 如果不加括号会变成false，因为+的优先级高于===
+	document.write(c===d+'<br/>');//false
+</script>-->
+
+<!--<script type="text/javascript">
+	var scope='global hi';
+	function a(){
+		var scope='local hi';
+		function b(){
+			var scope='nested hi';
+			alert(scope);
+		}
+		alert(scope); //local hi
+		return b();
+	}
+	alert(scope); //global hi
+	a(); //nested hi
+</script>-->
+<script type="text/javascript">
+	var arr1=[1,2,3,4,'aa',5,6,7,9];
+	var lag=false;
+	for(var i=0;i<arr1.length;i++){
+		if(typeof arr1[i]=='string'){
+			lag=!lag;
+			break;
+		}
+	};
+	alert(lag);
+</script>
+
+</body>
+</html>
