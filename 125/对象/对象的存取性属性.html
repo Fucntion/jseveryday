@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+	//一个对象的属性可分为以下几种类型
+	var obj1={x:1,y:2,z:[1,2,3]};
+	//其中各个属性比如 
+	//obj1.x,为x属性的值(console.log(obj1.x))，是否可写(obj1.x=34)，可以枚举(for in)，可以配置
+	// 有的对象具有存取器属性，则存取器属性的特征把读写改成成get和set即可
+	console.log(Object.getOwnPropertyDescriptor(obj1,"x"));//getOwnPropertyDescriptor只能得到自有属性的描述符
+	// configurable  // true x属性可配置
+	// enumerable    // true X属性可枚举
+	// value         // 1    x属性的值
+	// writable      // true  x属性可写
+	</script>
+</body>
+</html>

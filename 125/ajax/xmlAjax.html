@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+</style>
+</head>
+<body>
+<script type="text/javascript">
+function createXHR(){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+	    xmlhttp=new XMLHttpRequest();
+	}
+	else{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	return xmlhttp;
+}
+function vote(){
+	var xhr=createXHR();//制造xhr
+	xhr.open('GET','01-vote.php',true);//打开连接
+	xhr.send(null);//发送请求
+}
+
+</script>
+<div>
+	<p><img src="../../124/zzt.jpg"></p>
+	<p><input type="button" value="投票" onclick="vote()"></p>
+</div>
+<div></div>
+</body>
+</html>

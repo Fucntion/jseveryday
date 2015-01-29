@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+	// function inherit(p){
+	// 	if(p == null) throw TypeError();
+	// 	if(Object.create)
+	// 		return Object.create(p);
+	// 	var t= typeof p;
+	// 	if(t !== "object" && t!=="functiion") throw TypeError();
+	// 	function f(){};
+	// 	f.prototype = p;
+	// 	return new f();
+	// }
+
+
+   /*
+	*
+	*除了给object.prototype添加一个不可枚举的entend()方法
+	*这个方法继承自调用他的对象，将作为参数传入的对象的属性一一赋值
+	*除了值之外，也赋值属性的特性，除非在目标对象中存在同名的属性
+	*参数对象的所有自有对象包括不可枚举对象，也会一一复制
+	*
+	*/
+
+	Object.defineProperty(Object.prototype,"extend",{
+		writed:true,
+		enumerable:false,
+		configurable:true,
+		value:function(o){
+			var names=Object.getOwnPropertyNames(o);
+			for(var i=0;i<names.length;i++){
+				//如果属性已经存在，则跳过
+				if(names[i] in this) continue;
+				var desc=Object.getOwnPropertyDescriptor(o,names[i]);
+				Object.defineProperty(this,names[i],desc);
+			}
+		}
+	});
+	</script>
+</body>
+</html>

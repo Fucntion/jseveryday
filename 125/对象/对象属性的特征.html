@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+   <script type="text/javascript">
+   var a={r:2221,b:'ttt'};
+   document.write(a.r.length);//undefined
+   document.write(a.b.length);//3
+   
+   var b=4342342342;
+   document.write(b.length);//undefined
+   //什么狗屁东西。。。
+   
+
+   //document.write(a.c.length);//报错了。。。
+   //这样写就不报错
+   var len=undefined;
+   if(book){ //检车对象是否存在
+   	if(book.subtitle) len=book.subtitle.length;//检查属性是否存在，如果属性存在最不济也就是undefned和null，不会报错终止。
+   }
+
+   //还有一种更聪明的
+   var len=book&&book.subtitle&&book.subtitle.length;
+
+   
+   </script> 
+</body>
+</html>

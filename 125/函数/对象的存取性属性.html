@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+	f();
+	function f(){
+		console.log('dfd');//函数语句申明方式，会自动申明提前
+	}
+
+	function f2(){
+		console.log('申明马上调用1');//函数语句申明方式，会自动申明提前
+	}f2();
+	
+	//b();//用表达式申明的函数不会命名提前
+	var b=function d(){
+		console.log('dfsdf');
+	};
+	b();//正常显示
+	
+	var b2=function d2(){
+		console.log('申明马上调用2');
+	}();//申明即调用
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+</style>
+</head>
+<body>
+<script type="text/javascript">
+function createXHR(){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+	    xmlhttp=new XMLHttpRequest();
+	}
+	else{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	return xmlhttp;
+}
+function vote(){
+	var xhr=createXHR();//制造xhr
+	xhr.open('GET','02-vote.php',true);//打开连接 false为同步，true为异步
+	xhr.send(null);//发送请求
+	// alert(xhr.responseText)
+	// alert(3);
+	//绑定状态变化的回调函数
+	xhr.onreadystatechange=function (){
+		// document.getElementById('progress').innerHTML+=('状态已经变成'+this.readyState+'<br/>');
+		if(this.readyState==4){
+			alert('请求完成');
+		}
+	}
+	alert('df')
+}
+
+</script>
+<div>
+	<p><img src="../../124/zzt.jpg"></p>
+	<p><input type="button" value="投票" onclick="vote()"></p>
+</div>
+<div id="progress"></div>
+</body>
+</html>
