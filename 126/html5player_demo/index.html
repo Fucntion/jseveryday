@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>清新的HTML5音乐播放器</title>
+<meta name="description" content="描述">
+<meta name="keywords" content="关键词">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="music_wrap">
+		<div class="artist_info">
+			<div class="artist_avatar">
+				<img />
+			</div>
+			<div class="artist">Artist</div>
+			<div class="artist_name">歌手</div>
+		</div>
+
+		<div class="track">
+			<div class="music_name">歌曲</div>
+			<div class="music_album">专辑</div>
+		</div>
+
+		<div class="control">
+			<div class="option">
+				<div class="time">-00:00</div>
+				<div class="volume" title="音量">
+					<p>&#xe604;</p>
+				</div>
+				<div class="volume_wrap hidden">
+					<div class="volume_bar">
+						<div class="volume_now"></div>
+					</div>
+				</div>
+				<ul id="option_list">
+					<li class="repeat" title="单曲循环">&#xe609;</li>
+					<li class="shuffle" title="随机播放">&#xe608;</li>
+					<li class="list" title="列表循环">&#xe606;</li>
+				</ul>
+			</div>
+
+			<div class="progress_bar" id="bar">
+				<div class="progress"></div>
+				<div class="buffer"></div>
+			</div>
+
+			<div class="action_button">
+				<div class="prev" title="上一首">&#xe60d;</div>
+				<div class="play" title="播放" id="play">&#xe60a;</div>
+				<div class="pause hidden" title="暂停">&#xe60b;</div>
+				<div class="next" title="下一首">&#xe60c;</div>
+			</div>
+		</div>
+
+		<audio id="audio">
+			<p>您的浏览器不支持HTML5播放器呢！赶紧换一个最新的呗^_^.</p>
+		</audio>
+	</div>
+	<div class="coder">基于 <span>&#xe600;</span> 和 <span>&#xe601;</span> 编写，经过 <span>&#xe603;</span>、<span>&#xe602;</span> 和 <span>&#xe605;</span> 测试 &nbsp;&nbsp;Code By <a href="http://file.dengo.org/demo/html5player/index.html" target="_blank">Dengo</a></div>
+	<script type="text/javascript" src="js/list.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

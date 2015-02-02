@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+
+	function max(arr){
+		var max=arr[0];
+		for(i=1;i<arr.length;i++){
+			if(max<arr[i])
+				max=arr[i];
+		}
+		return max;
+	}
+	function getPropertyNames(){
+		// console.log(arguments.length);
+		if(arguments.length!==3){
+			throw new Error("你输入的变量太多或者太少啦------"+arguments.length+"------符合规定的是3个才对");
+		}
+		var numbermax=max(arguments);
+		console.log(numbermax);
+	}
+	getPropertyNames(1,555,11111);
+</script>
+<body>
+	
+</body>
+</html>

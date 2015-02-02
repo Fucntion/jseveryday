@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>米屋 | 背单词</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet"> 
+    <link href="css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>  
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head><!--/head-->
+
+<body>
+
+<!--.preloader-->
+<div class="preloader"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+<!--/.preloader-->
+
+<header id="header"> 
+    <div class="container">
+        <div class="container-inner">
+            <div class="logo pull-left">
+                <a class="pull-left logo" href="index.html">
+                    <h1 id="count"><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+                </a>
+            </div>
+            <div class="menu pull-right hidden-xs">
+                <a href="#" class="nav-button">
+                    <i class="fa fa-align-justify"></i> Menu
+                </a> 
+            </div>
+        </div>
+    </div>
+</header> <!--/#header-->
+
+<div id="navigation">
+    <div class="vertical-middle">
+        <div class="vertical-middle-inner">
+            <div class="main-nav">
+                <a id="hidemenu" href="#"><i class="fa fa-times-circle fa-2x"></i></a>
+                <ul>                     
+                    <li class="active"><a href="#" data-target="#page-slider" data-slide-to="0">Home</a></li>
+                    <li><a href="#" data-target="#page-slider" data-slide-to="1">About</a></li>
+                    <li><a href="#" data-target="#page-slider" data-slide-to="2">Service</a></li>                     
+                    <li><a href="#" data-target="#page-slider" data-slide-to="3">Portfolio</a></li>   
+                    <li><a href="#" data-target="#page-slider" data-slide-to="4">Blog</a></li> 
+                    <li><a href="#" data-target="#page-slider" data-slide-to="5">Contact</a></li>                  
+                </ul>
+            </div>
+        </div>
+    </div>
+</div><!--/#navigation-->
+
+<section id="welcome-page">
+
+    <div id="page-slider" class="carousel slide" data-interval="false">
+
+        <ol class="carousel-indicators visible-xs">
+            <li data-target="#page-slider hidden-xs" data-slide-to="0" class="active"></li>
+            <li data-target="#page-slider hidden-xs" data-slide-to="1"></li>
+            <li data-target="#page-slider hidden-xs" data-slide-to="2"></li>
+            <li data-target="#page-slider hidden-xs" data-slide-to="3"></li>
+            <li data-target="#page-slider hidden-xs" data-slide-to="4"></li>
+            <li data-target="#page-slider hidden-xs" data-slide-to="5"></li>
+        </ol>
+
+        <a class="welcome-page-left" href="#page-slider" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="welcome-page-right" href="#page-slider" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+
+        <div class="carousel-inner">
+
+            <div id="home-page" class="item active">
+                <div class="container">
+                    <div class="vertical-middle">
+                        <div class="vertical-middle-inner">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-push-6">
+                                    <div class="questioncontent">
+                                        <!-- <img class="container-fuild" src="tv.png"> -->
+                                        <div id="question">
+                                            <p class="question"> 请听题 --> <span class="question-content"></spsn></p>
+                                            <p class=" question-option-list" data-value="A"><span> A . </span><span class="option-content"> </spsn></p>
+                                            <p class="question-option-list" data-value="B"><span> B . </span><span class="option-content"> </spsn></p>
+                                            <p class="question-option-list" data-value="C"><span> C . </span><span class="option-content"> </spsn></p>
+                                            <p class="question-option-list" data-value="D"><span> D . </span><span class="option-content"> </spsn></p>
+                                            <button data-queid=" " id="goto">提 交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-pull-6">
+                                    <h2 class="heading  ">玩转背单词 <br> 捐大米 </h2>
+                                    <p class="lead">随时随地检测英语词汇量 <br> 并且将背单词积攒的积分用于捐助公益项目 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/#home-page-->
+
+            <div id="portfolio-page" class="item">
+                <div class="container">
+
+                    <div class="vertical-middle">
+                        <div class="vertical-middle-inner">
+
+                            <div class="text-center">
+                                <h2 class="page-header">案 例</h2>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-sm-4">
+                                    <div class="overlay-container">
+                                        <img class="img-responsive" src="images/portfolio/1.jpg" alt="">
+                                        <div class="overlay">
+                                            <div class="vertical-middle">
+                                                <div class="vertical-middle-inner">
+                                                    <a href="#"><i class="fa fa-plus"></i></a>
+                                                    <h4>Marlon Henson INC</h4>
+                                                    Print Templates
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="overlay-container">
+                                        <img class="img-responsive" src="images/portfolio/2.jpg" alt="">
+                                        <div class="overlay">
+                                            <div class="vertical-middle">
+                                                <div class="vertical-middle-inner">
+                                                    <a href="#"><i class="fa fa-plus"></i></a>
+                                                    <h4>Marlon Henson INC</h4>
+                                                    Print Templates
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="overlay-container">
+                                        <img class="img-responsive" src="images/portfolio/3.jpg" alt="">
+                                        <div class="overlay">
+                                            <div class="vertical-middle">
+                                                <div class="vertical-middle-inner">
+                                                    <a href="#"><i class="fa fa-plus"></i></a>
+                                                    <h4>Marlon Henson INC</h4>
+                                                    Print Templates
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>                
+            </div><!--/#portfolio-page-->
+
+            <div id="about-page" class="item">
+                <div class="container">
+
+                    <div class="vertical-middle">
+                        <div class="vertical-middle-inner">
+
+                            <div class="text-center">
+                                <h2 class="page-header">起 源</h2>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="box">
+                                        <h3>愿 景</h3>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="box">
+                                        <h3>模 式</h3>
+                                        <p>.</p>
+                                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="box">
+                                        <h3>持 续</h3>
+                                        <p>国外早已兴起背单词捐大米的模式——Freerice.com，公益精神相通，我们借鉴他的模式，并试图做了一些改变.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>              
+            </div><!--/#about-page-->
+
+            <div id="service-page" class="item">
+                <div class="container">
+
+                    <div class="vertical-middle">
+                        <div class="vertical-middle-inner">
+
+                            <div class="text-center">
+                                <h2 class="page-header">无 边</h2>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-3 text-center">
+                                    <div class="box">
+                                        <i class="fa fa-globe fa-2x"></i>
+                                        <h3>地 域</h3>
+                                        <p>无论你是潮流的肾6，还是坚守老乔的4s,拉风的ipad系列，勾人眼神的macbook，看到的都是一样的界面.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 text-center">
+                                    <div class="box">
+                                        <i class="fa fa-graduation-cap fa-2x"></i>
+                                        <h3>学 历</h3>
+                                        <p>伦敦郊区的留学生，布拉格广场反.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 text-center">
+                                    <div class="box">
+                                        <i class="fa fa-linux fa-2x"></i>
+                                        <h3>系 统</h3>
+                                        <p>Window Phone不要哭泣，终于有一个一视同仁的站点了。mac放下你的高贵冷艳一起来吧，lunix不要担心是不是这个好东西又没有你的软件，主流操作系统都可以.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 text-center">
+                                    <div class="box">
+                                        <i class="fa fa-mobile fa-2x"></i>
+                                        <h3>设 备</h3>
+                                        <p>你用的是苹果、你用的是三星的安卓，你是小米的狂热分子，他是诺基亚的死忠，还有人抱着ipad来到这里，不管你是什么设备，都可以顺利完成你想要做得.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>                
+            </div><!--/#service-page-->
+
+            <div id="contact-page" class="item">
+                <div class="container">
+
+                    <div class="vertical-middle">
+                        <div class="vertical-middle-inner">
+
+                            <div class="text-center">
+                                <h2 class="page-header">留言</h2>
+                            </div>
+
+                            <form class="form-horizontal" id="contact-form" role="form">
+                                <div class="form-group form-status">
+                                    <div class="col-sm-offset-2 col-sm-6">
+                                        <div class="form-status-content">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-6">
+                                        <input type="text" name="name" class="form-control input-lg" placeholder="姓名" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-6">
+                                        <input type="email" name="email" class="form-control input-lg" placeholder="邮箱" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-6">
+                                        <input type="text" name="subject" class="form-control input-lg" placeholder="主题" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-8">
+                                        <textarea name="message" rows="6" class="form-control input-lg" placeholder="正文" required="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-8">
+                                        <button type="submit" class="btn btn-lg btn-transparent">留 言</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>                
+            </div><!--/#contact-page-->
+
+            <div id="blog-page" class="item">
+                <div class="container">
+
+                    <div class="vertical-middle">
+                        <div class="vertical-middle-inner">
+
+                            <div class="text-center">
+                                <h2 class="page-header">成 员</h2>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-sm-4">
+                                    <div class="overlay-container">
+                                        <img class="img-responsive" src="images/blog/2.jpg" alt="">
+                                        <div class="overlay">
+                                            <div class="vertical-middle">
+                                                <div class="vertical-middle-inner">
+                                                    <a class="readmore" href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="entry-title">欧阳，创意策划以及文案</h3>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="overlay-container">
+                                        <img class="img-responsive" src="images/blog/1.jpg" alt="">
+                                        <div class="overlay">
+                                            <div class="vertical-middle">
+                                                <div class="vertical-middle-inner">
+                                                    <a class="readmore" href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="entry-title">小君，web前端，技术支持</h3>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="overlay-container">
+                                        <img class="img-responsive" src="images/blog/3.jpg" alt="">
+                                        <div class="overlay">
+                                            <div class="vertical-middle">
+                                                <div class="vertical-middle-inner">
+                                                    <a class="readmore" href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="entry-title">我们还缺一个擅长运营之道的<br/>伙伴，快戳这里加入<a href="mailto:271938312@qq.com"><i class="fa center fa-envelope-o "></i></a></h3>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>                
+            </div><!--/#blog-page-->
+
+        </div><!--/.carousel-inner-->
+    </div>
+</section>
+
+<footer id="footer" class="text-center">
+    Designed by <a target="_blank" href="#" title="景象注册">JX</a>
+</footer>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!--<script type="text/javascript" src="js/swipe.js"></script>-->
+<script type="text/javascript" src="js/main.js"></script>
+<!--<script type="text/javascript">
+$(function() { 
+        var $myCarousel = $('#page-slider .carousel-inner').swiperight(function(){ 
+             $myCarousel.carousel('prev'); 
+        }).swipeleft(function() { 
+            $myCarousel.carousel('next'); 
+        }); 
+});
+
+</script>-->
+</body>
+</html>
