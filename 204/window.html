@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+
+	//终于看到第二部分了 ，感觉权威指南的一二部分颠倒了。
+	//用定时器来实现时钟的功能
+	
+	function clock(){
+		var time=new Date();
+		span=document.getElementById('span2');
+		span.innerHTML=time.toLocaleTimeString();
+		setTimeout(clock,2000);
+		setTimeout(clock,7000);
+	}
+	onload=clock;
+
+</script>
+<body>
+	<span id="span"></span>
+	<span id="span2"></span>
+</body>
+</html>
