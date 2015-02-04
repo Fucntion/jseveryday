@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+
+	var str='global string';
+	function bibao(){
+		var str='local string';
+		function f(){ return str};
+		return f;
+	}
+	console.log(bibao()());
+
+</script>
+<body>
+	
+</body>
+</html>
