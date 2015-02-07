@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form>
+		<label for="name">姓名</label><input id="name1" type="text" name="name"><br/>
+		<label for="password">密码</label><input id="password1" type="password" name="password"><br/>
+		<label for="passage">具体内容</label><textarea id="passage1" name="content" rows="50" cols="190" ></textarea><!-- col规定宽度。 -->
+		<button id="tijiao">提交</button><button class="tijiao">提交2</button>
+	</form>
+
+<script type="text/javascript">
+
+	var btn1 = document.getElementsByTagName("button")[0];
+	var f = document.forms[0];
+	f.method="post";
+	f.action="203.html";
+	btn1.onclick=function(){
+		var username=document.getElementsByName('name');
+		var userpassword=document.getElementsByName('password')[0];
+		var userpassage=document.getElementById('passage1');
+		document.forms[0].submit();
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<script type="text/javascript">
+
+function Person(name){
+  this.name = name;
+}
+
+Person.prototype.greet = function(otherName,name){
+  return "Hi " + otherName + ", my name is " + this.name;
+}
+console.log(Person.prototype.greet('aa','dd'));
+// Person.prototype 返回的是一个Person类
+
+//Person.prototype.greet即为该类的属性，即greet对象。他几乎可以说和person对象是兄弟
+
+ 
+
+
+ // Person {greet: function}
+ // constructor: function Person(name){ constructor是构造函数的意思
+ // 	arguments: null
+ // 	caller: null
+ // 	length: 1
+ // 	name: "Person"
+ // }
+
+
+
+//  function (otherName){
+//   return "Hi " + otherName + ", my name is " + this.prototype;
+// }
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

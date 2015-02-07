@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+
+// 	需求
+
+// 写一个函数判断两个对象结构相同。具体需求：
+
+// 设参数分别为left, right, 当以下全部满足，则返回true，否则返回false
+
+// left, right必须是都是对象，否则返回false
+// left, right中得属性必须类型相同，否则返回false.
+// 属性不存在时，算作类型相同。如left.a = 1, right.a不存在，则依然算通过。(实际数据返回有些属性可以不存在)
+// 对于数组类型，只取第一个元素判断即可。若数组为空，不判断数组中的元素。
+// 以上满足, 返回true
+// 接口
+
+/*
+ * param {object} left 
+ * param {object} right
+ * return {boolean}
+ */
+// function judgeStructure(left, right){
+// 	if(is)
+// }
+// 示例
+
+// judgeStructure({x : 1}, {x : 100}); // true
+// judgeStructure({x : 1}, {x : true}); // false
+// judgeStructure({x : 1}, {}); // true
+
+
+function equal(objA, objB)
+
+{
+    if (typeof arguments[0] != typeof arguments[1])//typeof 检测对象的类型靠谱吗？
+        return false;
+
+    //数组
+    if (arguments[0] instanceof Array)
+    {
+        if (arguments[0].length != arguments[1].length)
+            return false;
+        
+        var allElementsEqual = true;
+        for (var i = 0; i < arguments[0].length; ++i)
+        {
+            if (typeof arguments[0][i] != typeof arguments[1][i])
+                return false;
+
+            if (typeof arguments[0][i] == 'number' && typeof arguments[1][i] == 'number')
+                allElementsEqual = (arguments[0][i] == arguments[1][i]);
+            else
+                allElementsEqual = arguments.callee(arguments[0][i], arguments[1][i]);            //递归判断对象是否相等                
+        }
+        return allElementsEqual;
+    }
+    
+    //对象
+    if (arguments[0] instanceof Object && arguments[1] instanceof Object)
+    {
+        var result = true;
+        var attributeLengthA = 0, attributeLengthB = 0;
+        for (var o in arguments[0])
+        {
+            //判断两个对象的同名属性是否相同（数字或字符串）
+            if (typeof arguments[0][o] == 'number' || typeof arguments[0][o] == 'string')
+                result = eval("arguments[0]['" + o + "'] == arguments[1]['" + o + "']");
+            else {
+                //如果对象的属性也是对象，则递归判断两个对象的同名属性
+                //if (!arguments.callee(arguments[0][o], arguments[1][o]))
+                if (!arguments.callee(eval("arguments[0]['" + o + "']"), eval("arguments[1]['" + o + "']")))
+                {
+                    result = false;
+                    return result;
+                }
+            }
+            ++attributeLengthA;
+        }
+        
+        for (var o in arguments[1]) {
+            ++attributeLengthB;
+        }
+        
+        //如果两个对象的属性数目不等，则两个对象也不等
+        if (attributeLengthA != attributeLengthB)
+            result = false;
+        return result;
+    }
+    return arguments[0] == arguments[1];
+}
+
+ 
+
+// var a = {Name:"YuanXP",Id:9,Go:{a:'1',b:'2'}};
+// var b = {Id:9,Name:"YuanXP",'Go':{a:'1',b:'2'}};
+
+// var r = equal(a, b);
+// alert(r); 
+
+
+// console.log(undefined);//undefined
+
+// var str="abcdefg";
+// console.log(typeof (str));//string
+// console.log(typeof "abcdefg");//string
+// var num1=1111;
+// console.log(typeof num1); //number
+
+// var str1=num1+'a';
+// console.log(typeof str1);//string
+
+// var str2=new String();
+// console.log(typeof str2);//object
+
+// var arr=[1,2];
+// console.log(typeof arr);//object
+// var obj=new Object();
+// console.log(typeof obj);//object
+// function fun1(){};
+// console.log(typeof fun1);//function
+// var fun2=function (){};
+// console.log(typeof fun2);//function
+
+
+</script>
+</body>
+</html>

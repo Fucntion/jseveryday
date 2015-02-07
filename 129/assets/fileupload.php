@@ -13,7 +13,7 @@
 #!! 此文件只是个示例，不要用于真正的产品之中。
 #!! 不保证代码安全性。
 
-
+header("Content-type: text/html; charset=utf-8");
 // Make sure file is not cached (as it happens for example on iOS devices)
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
@@ -76,6 +76,7 @@ if (isset($_REQUEST["name"])) {
     $fileName = uniqid("file_");
 }
 
+
 $filePath = $targetDir . DIRECTORY_SEPARATOR . $fileName;
 $uploadPath = $uploadDir . DIRECTORY_SEPARATOR . $fileName;
 
@@ -108,7 +109,9 @@ if ($cleanupTargetDir) {
 
 
 // Open temp file
+
 if (!$out = @fopen("{$filePath}_{$chunk}.parttmp", "wb")) {
+
     die('{"jsonrpc" : "2.0", "error" : {"code": 102, "message": "Failed to open output stream."}, "id" : "id"}');
 }
 
@@ -146,6 +149,7 @@ for( $index = 0; $index < $chunks; $index++ ) {
 }
 if ( $done ) {
     if (!$out = @fopen($uploadPath, "wb")) {
+        var_dump($out);exit();
         die('{"jsonrpc" : "2.0", "error" : {"code": 102, "message": "Failed to open output stream."}, "id" : "id"}');
     }
 

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+//返回一二继承指定对象的新对象
+function inherit(p){
+	if(p == null) throw TypeError();
+	if(Object.create)
+		return Object.create(p);
+	var t = typeof p;
+	if(t !== "object" && t !== "function") throw TypeError();
+	function f(){};
+	f.prototype = p;
+	return new f();
+}
+
+// 对象的构造函数
+function range(from,to){
+	var r = inherit(range.methods);
+	r.from = from;
+	r.to = to;
+	return r;
+}
+
+range.methods = {
+	includes: function(x){
+		return this.from <= x && x<=this.to;
+		//this是关键字不受作用域影响，函数作为对象的属性调用时候，this为调用该函数的对象本身。
+	},
+	foreach: function(f){
+		for(var x = Math.ceil(this.from); x <= this.to; x++) f(x);
+	},
+	toString: function (){return "(" + this.from + "****" + this.to + ")";}
+	
+};
+
+var r =range(1,10);
+r.includes(6);
+r.foreach(console.log);//居然想到用这个方法，真实妙极了。我在下一行用write方法来试试。
+// r.foreach(document.write);
+console.log(r);//难道这个方法出现的东西都是调用 toString()产生的吗？
+
+</script>
+</body>
+</html>

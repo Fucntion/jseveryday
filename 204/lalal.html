@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<script type="text/javascript">
+// 	做了20年前端开发，你终于领悟赚钱不能靠打工，于是你辞职回家开了间小饭店。
+// // 你的日常是这样的，平时客人不多，就安排3个人一张桌子。
+// var guests = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// console.log(repast(guests, 3)); // 结果：[[1,2,3], [4,5,6], [7,8,9]];
+// // 忙碌时，就安排5个人一张桌子。
+// var guests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+// console.log(repast(guests, 5)); // 结果：[[1,2,3,4,5], [6,7,8,9,10], [11,12]];
+// // 作为前资深前端开发，这点问题根本难不住你：
+function repast (guests, seatNum) {
+// 请给客人合理的分配座位
+	// var guests=guests;
+	// var length=Math.floor(guests.length/seatNum);
+	// var arr=new Array(length-1);
+	// for(i=0;i<=length;i++){
+	// 	 arr[i]=new Array(seatNum);
+	// 	for(var j=0;j<seatNum;j++){			
+	// 		arr[i][j]=guests[seatNum*i+j];
+
+	// 	}
+	// 	arr[i]=arr[i].filter(function (x){return x!=undefined && x!=null});		
+	// }
+
+	//  return arr;
+
+	 var a=[];
+ while(guests.length){a.push(guests.splice(0,seatNum));}
+ return a;
+}
+
+var guests = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17];
+console.log(repast(guests, 4));
+
+
+</script>
+</head>
+<body>
+  
+</body>
+</html>
