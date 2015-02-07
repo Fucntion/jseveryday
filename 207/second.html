@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<label for="wheelDelta">滚动值:</label>(IE/Opera)
+		<input type="text" id="wheelDelta" />
+		<label for="detail">滚动值:(Firefox)</label>
+		<input type="text" id="detail" />
+
+
+	</body>
+	<script type="text/javascript">
+		var scrollFunc = function(e) {
+				ee = e || window.event;
+				var t1 = document.getElementById("wheelDelta");
+				var t2 = document.getElementById("detail");
+				if (e.wheelDelta) { //IE/Opera/Chrome 
+					var a=t1.value = e.wheelDelta;
+						if(a>0){
+							var y = document.documentElement.scrollTop || document.body.scrollTop;
+							y=y+document.body.clientHeight;
+						}//向上
+							 
+						if(a<0)//向下
+				} else if (e.detail) { //Firefox 
+					t2.value = e.detail;
+				}
+			}
+			
+			/*注册事件*/
+		if (document.addEventListener) {
+			document.addEventListener('DOMMouseScroll', scrollFunc, false);
+		} //W3C 
+		window.onmousewheel = document.onmousewheel = scrollFunc; //IE/Opera/Chrome 
+
+	</script>
+
+</html>

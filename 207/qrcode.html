@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' /> 
+    <!-- js引用包 --> 
+    <script src='http://libs.baidu.com/jquery/1.9.0/jquery.min.js'></script> 
+    
+    <script type="text/javascript" src="http://jq22.qiniudn.com/jquery.qrcode.min.js"></script>
+   
+  </head>
+  <body>
+    <!-- 二维码绘制区域 -->
+<div id="qrcodeCanvas"></div>
+
+   <script>
+    	$('#qrcodeCanvas').qrcode({
+       text: window.location.href,//二维码代表的字符串（本页面的URL）
+       width: 167,//二维码宽度
+       height: 167//二维码高度
+});
+    </script>  
+  </body>
+</html>

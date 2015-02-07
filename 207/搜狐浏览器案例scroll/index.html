@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>	
+<title>搜狗浏览器功能向导页面滚动效果代码</title>
+<style>
+*{margin:0px;}
+html{overflow-y:hidden}
+#cont{width:100%;position:relative;}
+.stage{width:100%;height:580px;display:block;position: relative;overflow: hidden;}
+.stage_box{width:900px;height:580px;margin:auto;position:relative;text-align:center;overflow:hidden;}
+#stage1{background-color:#f9f9f9;}
+#stage2{background-color:#35b5d2;}
+#stage3{background-color:#f3bf2e;}
+#stage4{background-color:#5c86c2;}
+#stage5{background-color:#d44267;}
+#stage6{background-color:#a2c371;}
+.fe_img1{position:absolute;margin:-196px -274px;width: 555px;height:392px;left:42%;top:50%; background:url(images/fe_img1.png) no-repeat;}
+.fe_img2{position:absolute;margin:-220px -263px;width: 527px;height:441px;left:42%;top:50%; background:url(images/fe_img2.png) no-repeat;}
+.fe_img3{position:absolute;margin:-206px -272px;width: 543px;height:412px;left:42%;top:50%; background:url(images/fe_img_plus.png) no-repeat;}
+.fe_img4{position:absolute;margin:-206px -272px;width: 543px;height:412px;left:42%;top:50%; background:url(images/fe_img3.png) no-repeat;}
+.fe_img5{position:absolute;margin:-200px -320px;width: 641px;height:401px;left:42%;top:50%; background:url(images/fe_img4.png) no-repeat;}
+.fe_flag{position:absolute;width: 140px;height:86px;right: 80px;bottom: 60px; background:url(images/fe_flag.png) no-repeat;}
+.fe_text1{position:absolute;margin:-31px -96px;width: 193px;height:68px;left:69%;top:45%; background:url(images/fe_text1.png) no-repeat;}
+.fe_text2{position:absolute;margin:-31px -96px;width: 193px;height:68px;left:69%;top:45%; background:url(images/fe_text2.png) no-repeat;}
+.fe_text3{position:absolute;margin:-31px -96px;width: 222px;height:65px;left:69%;top:45%; background:url(images/fe_text_plus.png) no-repeat;}
+.fe_text4{position:absolute;margin:-31px -128px;width: 257px;height:68px;left:69%;top:45%; background:url(images/fe_text3.png) no-repeat;}
+.fe_text5{position:absolute;margin:-31px -100px;width: 210px;height:68px;left:69%;top:45%; background:url(images/fe_text4.png) no-repeat;}
+.index_ins{position:absolute;left: 30px;top: 180px;width:222px;height:145px;background:url(images/index_ins.png) no-repeat;/*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="images/index_ins.png");+background-image: none;*/}
+.index_link{cursor:pointer;}
+.index_link1{position:absolute;width:147px;height:19px;left:673px;top:181px;background:url(images/index_link1.png) no-repeat;}
+.index_link1:hover{left:683px;}
+.index_link2{position:absolute;width:147px;height:19px;left:703px;top:232px;background:url(images/index_link2.png) no-repeat;}
+.index_link2:hover{left:713px;}
+.index_link3{position:absolute;width:147px;height:19px;left:733px;top:280px;background:url(images/index_link_plus.png) no-repeat;}
+.index_link3:hover{left:743px;}
+.index_link4{position:absolute;width:167px;height:19px;left:703px;top:328px;background:url(images/index_link3.png) no-repeat;}
+.index_link4:hover{left:713px;}
+.index_link5{position:absolute;width:147px;height:19px;left:673px;top:374px;background:url(images/index_link4.png) no-repeat;}
+.index_link5:hover{left:683px;}
+#guider .bg{z-index:0;width:100%;height:100%;background:url(images/guider_bg5.png) no-repeat center center;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="images/guider_bg5.png");_background-image: none;position:absolute;top:0px;left:0px;}
+#guider{width:30px;height:205px;position:absolute;top:380px;right:150px;}
+#guider .sina{z-index:1;position:absolute;left:0px;bottom:34px;width:100%;height:26px;display:block;}
+#guider .sina:hover{background:url(images/guider_bg.png) no-repeat center -135px;}
+#guider .tencent{z-index:1;position:absolute;left:0px;bottom:0px;width:100%;height:25px;display:block;}
+#guider .tencent:hover{background:url(images/guider_bg.png) no-repeat center -170.5px;}
+#guider_link1{z-index:1;height:31px;}
+.guider_link{position:relative;z-index:1;width:100%;height:20px;display:block;cursor:pointer;}
+#guider_link2.select{background:url(images/guider1_select.jpg) no-repeat center center;}
+#guider_link3.select{background:url(images/guider2_select.jpg) no-repeat center center;}
+#guider_link4.select{background:url(images/guider_select_plus.jpg) no-repeat center center;}
+#guider_link5.select{background:url(images/guider3_select.jpg) no-repeat center center;}
+#guider_link6.select{background:url(images/guider4_select.jpg) no-repeat center center;}
+#logo {position: absolute;top:2px;left:2.5px;}
+.swf_object{height:768px;margin-top:-94px;}
+.btn_down{width:80px;height:80px;position:absolute;bottom:0px;margin-left: -10px;left: 50%;cursor:pointer;}
+.sign {position:absolute; width: 32px;height:12px;left:24px;}
+#sign1_1{background: url(images/sign1.png) no-repeat ;bottom: 30px;}
+#sign2_1{background: url(images/sign2.png) no-repeat ;bottom: 38px;}
+#sign3_1{background: url(images/sign3.png) no-repeat ;bottom: 46px;}
+.signImg1{background: url(images/sign_1.png) no-repeat ;bottom: 30px;}
+.signImg2{background: url(images/sign_2.png) no-repeat ;bottom: 38px;}
+.signImg3{background: url(images/sign_3.png) no-repeat ;bottom: 46px;}
+</style>
+<script type="text/javascript" src="js/jquery_1.7.2.js"></script>
+<script type="text/javascript" src="js/jQueryRotateCompressed.2.2.js"></script>
+</head>
+<body scroll=no>
+<div id="cont">
+	<div class="stage" id="stage1">
+		<div class="stage_box">
+			<div class="index_ins"></div>
+			<div class="index_link1 index_link" index="1"></div>
+			<div class="index_link2 index_link" index="2"></div>
+			<div class="index_link3 index_link" index="3"></div>
+			<div class="index_link4 index_link" index="4"></div>
+			<div class="index_link5 index_link" index="5"></div>
+			<object class="swf_object" style="visibility: visible;align:center;valign:center;width:100%;background:transparent" type="application/x-shockwave-flash" data="images/01.swf?v=0129" id="swf1">
+				<param name="movie" value="images/01.swf">
+				 <param name="wmode" value="transparent">
+				 <param name="Scale" value="ShowAll"> 
+				 <param name="swLiveConnect" value="true">
+				 <param name="allowScriptAccess" value="always" /> 
+				<embed src="images/01.swf" autostart="false" allowScriptAccess="always" style="visibility: visible;align:center;valign:center;width:100%;height:100%" play="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" name="swf1"
+ ></embed>
+			</object>
+			
+		</div>
+		<a class="index_link btn_down" index="1">
+			<div class='sign' id='sign1_1'></div>
+			<div class='sign' id='sign2_1'></div>
+			<div class='sign' id='sign3_1'_></div>
+		</a>
+		
+
+	</div>
+	<div class="stage" id="stage2" name ="refresh">
+		<div class="fe_img1"></div>
+		<div class="fe_text1"></div>
+		<a class="index_link btn_down" index="2">
+			<div class='sign signImg1' id='sign1_2'></div>
+			<div class='sign signImg2' id='sign2_2'></div>
+			<div class='sign signImg3' id='sign3_2'></div>
+		</a>
+	</div>
+	<div class="stage" id="stage3">
+		<div class="fe_img2"></div>
+		<div class="fe_text2"></div>
+		<a class="index_link btn_down" index="3">
+			<div class='sign signImg1' id='sign1_3'></div>
+			<div class='sign signImg2' id='sign2_3'></div>
+			<div class='sign signImg3' id='sign3_3'></div>
+		</a>
+	
+	</div>
+	
+	<div class="stage" id="stage4">
+		<div class="fe_img3"></div>
+		<div class="fe_text3"></div>
+		<a class="index_link btn_down" index="4">
+			<div class='sign signImg1' id='sign1_plus'></div>
+			<div class='sign signImg2' id='sign2_plus'></div>
+			<div class='sign signImg3' id='sign3_plus'></div>
+		</a>
+	</div>
+
+	<div class="stage" id="stage5">
+		<div class="fe_img4"></div>
+		<div class="fe_text4"></div>
+		<a class="index_link btn_down" index="5">
+			<div class='sign signImg1' id='sign1_4'></div>
+			<div class='sign signImg2' id='sign2_4'></div>
+			<div class='sign signImg3' id='sign3_4'></div>
+		</a>
+	</div>
+	<div class="stage" id="stage6">
+		<div class="fe_img5"></div>
+		<div class="fe_text5"></div>
+		<div class="fe_flag">
+			<div onclick="go()" style='height:50%;cursor:pointer'></div>
+			<div onclick="backToTop()" style="height:50%;cursor:pointer"></div>
+		</div>
+	</div>
+	<div id="guider">
+		<a class = "guider_link" id="guider_link1"><img src="images/logo4.png" id="logo"></a>
+		<a class="guider_link" id="guider_link2"></a>
+		<a class="guider_link" id="guider_link3"></a>
+		<a class="guider_link" id="guider_link4"></a>
+		<a class="guider_link" id="guider_link5"></a>
+		<a class="guider_link" id="guider_link6"></a>
+		<a class="sina" target="_blank" href=""></a>
+		<a class="tencent" target="_blank" href=""></a>
+		<div class="bg"></div>
+		
+	</div>
+</div>
+<script type="text/javascript" src="js/sucaijiayuan.js"></script>
+</body>
+</html>
