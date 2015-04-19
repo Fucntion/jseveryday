@@ -1,0 +1,9 @@
+{
+    "name": "talk",
+    "version": "0.0.1",
+    "description": "这是我的第一个比较有意思的node程序",
+    "dependencies":{
+        "socket.io":"",
+        "mime":""
+    }
+}
