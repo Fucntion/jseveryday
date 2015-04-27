@@ -1,0 +1,23 @@
+<!doctype html>
+<html n-app>
+<head>
+    <meta charset="utf-8">
+    <title>liing | index</title>
+    <link href="css/app.css">
+    <link href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<body>
+<div ng-controller="control1">
+    <ul>
+        <li ng-repeat="x in names | orderBy:'country'">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+</div>
+<script src="js/control/control1.js"></script>
+</body>
+</body>
+</html>

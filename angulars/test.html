@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>liing | index</title>
+    <link href="css/app.css">
+    <link href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<body>
+<div ng-controller="control1">
+    姓：<input type="text" ng-model="obj.firstname"><br/>
+    名：<input type="text" ng-model="obj.lastname">
+    <br/>
+    全名是{{obj.fullname()}}
+</div>
+<script>
+    function control1($scope){
+        $scope.obj={
+            firstname:"wang",
+            lastname:"junxiang",
+            fullname:function(){
+                return this.firstname+" "+this.lastname;
+            }
+        }
+    }
+</script>
+</body>
+</body>
+</html>

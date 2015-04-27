@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html n-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>11</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<div ng-app=""  ng-init="count=0">
+<button ng-click="count=count+1">点我啊</button>
+    <p>{{count}}</p>
+</div>
+
+<div ng-app=""  ng-controller="Event">
+    <!--ng-app是干嘛的？-->
+    <!--因为是全局所以ng-app留空。。尼玛-->
+    <button ng-click="count2=count2+10">点我更疯狂</button>
+    {{count2}}
+</div>
+
+<script>
+    function Event($scope){
+        $scope.count2=0;
+    }
+</script>
+</body>
+</html>

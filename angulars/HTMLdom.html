@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html n-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<!--<div ng-app="" ng-init="mySwitch=true">-->
+<!--<button ng-disabled="mySwitch" >点我</button>-->
+<!--<input type="checkbox" ng-model="mySwitch"/> 按钮-->
+<!--{{mySwitch}}-->
+<!--</div>-->
+<div ng-app="" ng-init="state=true">
+    <p ng-show="!state">我是可见的</p>
+    <p ng-show="state">我是不可见的</p>
+    <input type="checkbox" ng-model="state">我是中国人{{state}}
+</div>
+</body>
+</html>
