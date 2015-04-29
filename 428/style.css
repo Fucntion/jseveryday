@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-04-28 20:58:52
+ * @version $Id$
+ */
+ *{
+ 	margin: 0;
+ 	padding: 0;
+ }
+ ul,li{
+ 	list-style: none;
+ }
+
+ html,body{
+	height: 100%;
+	width: 100%;
+	font: 18px;
+	line-height: 1.5;
+ }
+ .header{
+ 	width: 98%;
+ 	height: 30px;
+ 	margin: 0 auto;
+ 	text-align: center;
+ }
+ .search{
+ 	width: 98%;
+ 	height: 30px;
+ 	margin: 0 auto;
+ 	display: block;
+ 	border-radius: 5px;
+
+ }
+ .list{
+ 	width: 98%;
+ 	margin: 0 auto;
+ }
+ .group{
+ 	width: 100%;
+
+ 	display: block;
+ }
+ .group p{
+ 	width: 100%;
+ 	text-align: left;
+ 	height: 30px;
+ 	background:#CCFFFF;
+
+ }
+ .group li{
+ 	width: 100%;
+ 	padding: 0 2%;
+ 	text-align: left;
+ 	height: 30px;
+
+ }
