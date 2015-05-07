@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>tab切换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+        }
+        li{
+            list-style: none;
+        }
+        .tab{
+            width: 298px;
+            height: 98px;
+            margin: 10px;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+        .tab-title{
+            height: 27px;
+            position: relative;
+            background: #f7f7f7;
+        }
+        .tab-title ul{
+            position: absolute;
+            width: 300px;
+            left: -1;
+        }
+        .tab-title ul li{
+            float: left;
+            width: 58px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            padding: 0 1px;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+        .tab-title li a:link,.tab-title li a:visited{
+            text-decoration: none;
+            color: #000;
+        }
+        .tab-title li a:hover{
+            color: #f90;
+            font-weight: 700;
+        }
+        .tab-title li.select{
+            background: #fff;
+            background-color: #fff;
+            border-left: 1px #eee;
+            border-right: 1px #eee;
+        }
+        .tab .table-content .tabct{
+            margin: 10px 10px 19px;
+        }
+        .tab .table-content .tabct ul li{
+            float: left;
+            width: 134px;
+            height: 25px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-title">
+            <ul>
+                <li data-item="0" class="select"><a href="#">公告</a></li>
+                <li data-item="1"><a href="#">规则</a></li>
+                <li data-item="2"><a href="#">论坛</a></li>
+                <li data-item="3"><a href="#">安全</a></li>
+                <li data-item="4"><a href="#">公益</a></li>
+            </ul>
+        </div>
+        <div class="table-content">
+            <div class="tabct" style="display: block">
+                <ul>
+                    <li><a href="#">111111111111111</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                </ul>
+            </div>
+            <div class="tabct" style="display: none">
+                <ul>
+                    <li><a href="#">222222222222222</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                </ul>
+            </div>
+            <div class="tabct" style="display: none">
+                <ul>
+                    <li><a href="#">333333333333333</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                </ul>
+            </div>
+            <div class="tabct" style="display: none">
+                <ul>
+                    <li><a href="#">444444444444444</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                </ul>
+            </div>
+            <div class="tabct" style="display: none">
+                <ul>
+                    <li><a href="#">555555555555555</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                    <li><a href="#">八千家s店参加双11</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        !function(){
+            var selecltList=document.querySelectorAll('.tab-title>ul li');
+            var tabctList=document.querySelectorAll('.tabct');
+//            console.log(tabctList[0]);
+            for(var i=0;i<selecltList.length;i++){
+//                addEventHandler(selecltList[i],'click',getIndex,this);//傻逼啊，全局情况下this要么是windows要么是undefined
+                addEventHandler(selecltList[i],'click',getIndex,selecltList[i]);//傻逼啊，全局情况下this要么是windows要么是undefined
+            }
+            function getIndex(x){
+                var index = x.dataset.item;
+                select(index);
+            }
+            function select(i){
+
+                for(var k=0;k<selecltList.length;k++){
+                    selecltList[k].className='';
+                    tabctList[k].style.display='none';
+                    if(k==i){
+                        selecltList[i].className="select";
+                        tabctList[i].style.display='block';
+                    }
+
+                }
+            }
+
+
+//            添加事件监听函数
+//            obj       要添加监听的对象或元素
+//            eventName  事件名
+//            fun       监听函数的名称
+//            param     给监听函数传的参数，这里就传了一个参数
+//            addEventHandler(oview,'click',test02,this);
+            function addEventHandler(obj,eventName,fun,param){
+
+                var fn =fun;
+                if(param)
+                {
+                    fn =function(e)
+                    {
+                        fun.call(this, param);  //继承监听函数,并传入参数以初始化;
+                    }
+                }
+                if(obj.attachEvent){
+                    obj.attachEvent('on'+eventName,fn);
+                }else if(obj.addEventListener){
+                    obj.addEventListener(eventName,fn,false);
+                }else{
+                    obj["on" +eventName] = fn;
+                }
+            }
+
+            function removeEventHandler(obj,eventName, fun) {
+                if(obj.removeEventListener)
+                    obj.removeEventListener(eventName, fun, false);
+                else if(obj.detachEvent)
+                    obj.detachEvent("on" + eventName, fun);
+                else deleteobj["on" + eventName];
+            }
+        }()
+    </script>
+</body>
+</html>

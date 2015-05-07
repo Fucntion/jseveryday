@@ -3,7 +3,7 @@
  * @authors Your Name (you@example.org)
  * @date    2015-04-27 15:41:13
  * @version $Id$
- */
+ */ 
 
 // 工厂模式
 //  function Student(name,id){
@@ -110,17 +110,18 @@
 
 
 var linkArr=[];//创建存放联系人的数组
-function CreateLink(name,tel,group){
-	this.name=name;
-	this.tel=tel;
-	this.group=function(group){
-		// code
-	};
+function CreateLink(name,tel){
+	if(name&&tel){
+		this.name=name;
+		this.tel=tel;
+		this.group=CnToEn(this.name)[0]//首个名字的拼音
+	}
+	
 }
 
 
 CreateLink.prototype.add=function(){
-	
+	linkArr.push(this);
 }
 
 
@@ -136,6 +137,7 @@ CreateLink.prototype.update=function(){
 CreateLink.prototype.show=function(){
 
 }
+
 
 
 

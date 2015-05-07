@@ -2,23 +2,51 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Examples</title>
 <link href="" rel="stylesheet">
 <script type="text/javascript" src="obj.js"></script>
+<script type="text/javascript" src="fun.js"></script>
+<script type="text/javascript" src="pinyin.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<p class="header"><a href="#">编辑</a>联系人<a href="#">+</a></p>
+<p class="header"><a href="#">编辑</a>联系人<a href="addLink.html">+</a></p>
 <input class="search" type="text" placeholder="搜索"  />
-<div class="list">
-		<ul class="group">
-			<p class="firstName">A</p>
-			<li>AAA</li>
-			<li>ABB</li>
-			<li>ACC</li>
-		</ul>
+<div class="list"> 
+		
+		
 </div>
 <div class="firstNameTree"></div>
+<script type="text/javascript">
+//初始化页面
+var list=document.getElementsByClassName("list")[0];
+var str='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	for(i=0;i<str.length;i++){
+		var txt="<ul data-en='"+str[i]+"' class='group'><p class='firstName'>"+str[i]+"</p></ul> ";
+	list.innerHTML+=txt;
+	}
 
+var linklist = [
+{ "name":"汪君相" , "tel":"12345678901" },
+{ "name":"王春芹" , "tel":"12345678901" },
+{ "name":"林建昕" , "tel":"12345678901" },
+{ "name":"姚俊文" , "tel":"12345678901" },
+{ "name":"郑昌" , "tel":"12345678901" }
+];
+
+var strArr=[];
+for(var i=0;i<linklist.length;i++){
+	var firstNameEn = CnToEn(linklist[i].name)[0];//姓氏的拼音首字母
+	strArr.push(firstNameEn);
+	var txt="<ul data-en='"+strArr[i]+"' class='group'><p class='firstName'>"+strArr[i]+"</p></ul> ";
+	list.innerHTML+=txt;
+
+	var ul = document.querySelectorAll("[data-en='"+firstNameEn+"']")[0];//返回对应的ul标签,为下面插入做准备
+	var liinnerHTML="<li>"+linklist[i].name+"</li>";
+	ul.innerHTML+=liinnerHTML;
+
+}
+</script>
 </body>
 </html>

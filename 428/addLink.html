@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>addLink</title>
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="pinyin.js"></script>
+<script type="text/javascript" src="obj.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    姓名 ：<input type="text" ><br/>
+    电话 ：<input type="text" ><br/>
+    <button onclick="post()">保存</button>
+</body>
+<script type="text/javascript">
+	function post() {
+		var inputArr=document.getElementsByTagName("input");
+		var name=inputArr[0].value;
+		var tel=inputArr[1].value;
+		var newLink=new CreateLink(name,tel);
+
+		newLink.add();
+		console.log(linkArr);
+	}
+
+</script>
+<script type="text/javascript" src="fun.js"></script>
+</html>
